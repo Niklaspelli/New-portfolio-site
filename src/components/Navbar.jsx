@@ -4,17 +4,17 @@ import "../styles.css";
 function Navbar() {
   return (
     <nav className="nav">
+      <Link to="/" className="site-title">
+        Home
+      </Link>
+
       <ul>
-        <li>
-          <CustomLink to="/" className="site-title">
-            Home
-          </CustomLink>
-        </li>
-        <li>
-          <CustomLink to="/About" className="nav_link">
-            About
-          </CustomLink>
-        </li>
+        <CustomLink to="/About" className="nav_link">
+          About
+        </CustomLink>
+        <CustomLink to="/Work">Work</CustomLink>
+        <CustomLink to="/Contact">Contact</CustomLink>
+
         {/* Add more navigation links as needed */}
       </ul>
     </nav>
