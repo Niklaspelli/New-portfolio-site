@@ -1,4 +1,4 @@
-import { Link, useMatch, useResolvedPath } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../styles.css";
 
 function Navbar() {
@@ -9,11 +9,11 @@ function Navbar() {
       </Link>
 
       <ul>
-        <CustomLink to="/About" className="nav_link">
+        <Link to="/About" className="nav_link">
           About
-        </CustomLink>
-        <CustomLink to="/Work">Work</CustomLink>
-        <CustomLink to="/Contact">Contact</CustomLink>
+        </Link>
+        <Link to="/Work">Work</Link>
+        <Link to="/Contact">Contact</Link>
 
         {/* Add more navigation links as needed */}
       </ul>
@@ -21,7 +21,7 @@ function Navbar() {
   );
 }
 
-function CustomLink({ to, children, ...props }) {
+/* function CustomLink({ to, children, ...props }) {
   const resolvedPath = useResolvedPath(to);
   const isActive = useMatch({ path: resolvedPath.pathname, end: true });
 
@@ -32,6 +32,6 @@ function CustomLink({ to, children, ...props }) {
       </Link>
     </li>
   );
-}
+} */
 
 export default Navbar;
