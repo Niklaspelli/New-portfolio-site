@@ -1,0 +1,132 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    font-size: 18px;
+    background: linear-gradient(#111111, #292929);
+    color: orange;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.nav {
+    background-color: #0a0a0a;
+    color: orange;
+    display: flex;
+    border-bottom: 1px solid orange;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+.site-title {
+    font-size: 2rem;
+    font-weight: 900;
+
+}
+
+.nav ul {
+
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav a {
+    color: inherit;
+    position: relative;
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: .25rem;
+}
+
+
+.nav li:hover {
+    color: rgb(23, 23, 22)rgb(145, 102, 23)
+}
+
+li {
+    position: relative;
+    margin: 0;
+}
+
+.nav li::after {
+    content: '';
+    height: 2px;
+    width: 100%;
+    background: orange;
+    position: absolute;
+    left: 0;
+    bottom: 10px;
+    opacity: 0;
+    transition: all 0.2s;
+    pointer-events: none;
+
+}
+
+.nav li:hover::after {
+    opacity: 1;
+}
+
+
+
+.card-container {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, 330px);
+    align-items: center;
+}
+
+.card-bg {
+    /* Här har jag optimerat koden till alla cards! */
+
+    position: relative;
+    top: 0;
+    background-color: rgb(23, 22, 22);
+    padding: 10px;
+    opacity: 95%;
+    box-shadow: 15px 15px #523102;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+
+.card-content {
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    padding: 1px;
+
+
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+
+}
