@@ -9,7 +9,7 @@ import {
   faNodeJs,
   faHtml5,
 } from "@fortawesome/free-brands-svg-icons";
-
+import "../styles.css";
 import { styled } from "styled-components";
 
 export default function Home() {
@@ -17,8 +17,11 @@ export default function Home() {
     <Container>
       <Row className="justify-content-center align-items-center h-100">
         <Col>
+          <div className="fade-logo" style={{ color: "orange" }}>
+            Creative{" "}
+          </div>
           <div className="typer">
-            <div className="glow">Niklas Pelli</div>
+            <div className="glow">Frontend Developer...</div>
           </div>
         </Col>
       </Row>

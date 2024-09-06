@@ -7,19 +7,21 @@ import Contact from "./pages/Contact";
 
 import "./styles.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <Router>
       <Navbar />
+
       <div className="container">
         <Routes>
           <Route
             path="/"
             element={
               <>
-                <LandingPage />
                 <Home />
+                <LandingPage />
               </>
             }
           />
@@ -28,6 +30,7 @@ function App() {
           <Route path="/Contact" element={<Contact />} />
         </Routes>
       </div>
+      <Footer />
     </Router>
   );
 }

@@ -5,28 +5,17 @@
     box-sizing: border-box;
 }
 
-html,
+
 body {
-    height: 100%;
     margin: 0;
-    overflow: hidden;
+    max-height: 100%;
     font-size: 18px;
     background: linear-gradient(#111111, #292929);
+    background-size: cover;
     color: orange;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
-
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-    z-index: 0;
-}
 
 .nav {
     background-color: #0a0a0a;
@@ -129,4 +118,388 @@ li {
     margin: 0 auto;
     text-align: center;
 
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 4rem;
+    background-color: #0a0a0a;
+    border-top: 1px solid orange;
+    margin: 0;
+    margin-top: 0px;
+    scroll-padding-block-end: 100%;
+}
+
+.fa-brands {
+    color: orange;
+    font-size: 3rem;
+    text-align: center;
+    align-items: center;
+    left: 50%;
+    margin: 10px;
+}
+
+.fa-brands:hover {
+    box-shadow: 0 0 5px 3px rgba(147, 9, 9, 0.5);
+    transform: scale(1.2);
+    /* Här har jag lagt en liten hover-förstorning på ikonerna */
+}
+
+.fontawesome {
+    text-align: center;
+}
+
+
+
+.fade-logo {
+    font-size: 5rem;
+    display: flex;
+
+    -webkit-animation: fade-inout 7s;
+    -moz-animation: fade-inout 7s;
+    -o-animation: fade-inout 7s;
+    animation: fade-inout 7s;
+}
+
+.circle-wrap {
+
+
+    width: 170px;
+    height: 170px;
+    background-color: grey;
+    border-radius: 50%;
+    margin-bottom: 100px;
+    margin: 50px;
+}
+
+.circle-wrap .circle .mask,
+.circle-wrap .circle .fill-1,
+.circle-wrap .circle .fill-2,
+.circle-wrap .circle .fill-3,
+.circle-wrap .circle .fill-4,
+.circle-wrap .circle .fill-5 {
+
+    display: flex;
+    width: 170px;
+    height: 170px;
+    position: absolute;
+    border-radius: 50%;
+}
+
+.circle-wrap .circle .mask {
+    clip: rect(0px, 170px, 170px, 75px);
+}
+
+.mask .fill-1 {
+    clip: rect(0px, 75px, 170px, 0px);
+    background-color: cyan;
+}
+
+.mask.full-1,
+.circle .fill-1 {
+    animation: fill-1 ease-in-out 3s;
+    transform: rotate(90deg);
+}
+
+@keyframes fill-1 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(90deg);
+    }
+}
+
+.mask .fill-2 {
+    clip: rect(0px, 75px, 170px, 0px);
+    background-color: blue;
+}
+
+.mask.full-2,
+.circle .fill-2 {
+    animation: fill-2 ease-in-out 5s;
+    transform: rotate(120deg);
+}
+
+@keyframes fill-2 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(120deg);
+    }
+}
+
+.mask .fill-3 {
+    clip: rect(0px, 75px, 170px, 0px);
+    background-color: yellow;
+}
+
+
+.mask.full-3,
+.circle .fill-3 {
+    animation: fill-3 ease-in-out 3s;
+    transform: rotate(80deg);
+}
+
+@keyframes fill-3 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(80deg);
+    }
+}
+
+.mask .fill-4 {
+    clip: rect(0px, 75px, 170px, 0px);
+    background-color: green;
+}
+
+.mask.full-4,
+.circle .fill-4 {
+    animation: fill-3 ease-in-out 6s;
+    transform: rotate(80deg);
+}
+
+@keyframes fill-4 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(80deg);
+    }
+}
+
+
+.mask .fill-5 {
+    clip: rect(0px, 75px, 170px, 0px);
+    background-color: orange;
+}
+
+
+.mask.full-5,
+.circle .fill-5 {
+    animation: fill-5 ease-in-out 10s;
+    transform: rotate(140deg);
+}
+
+@keyframes fill-5 {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(140deg);
+    }
+}
+
+.inside-circle,
+.inside-circle2,
+.inside-circle3,
+.inside-circle4,
+.inside-circle5 {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: #212020;
+    line-height: 120px;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 20px;
+    z-index: 80;
+    font-size: 0.2em;
+    font-weight: 700;
+    color: orange;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.progress-value {
+    position: relative;
+    display: inline-flex;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+
+
+.video-container {
+    position: relative;
+    width: 100%;
+    /* 16:9 aspect ratio (9 / 16 * 100) */
+}
+
+.video-container iframe {
+
+    width: 100%;
+    height: 450px;
+}
+
+
+@keyframes blink {
+    from {
+        border-right: 4px solid orange;
+    }
+
+    to {
+        border-right: 4px solid rgb(40, 39, 39);
+    }
+}
+
+.card-img,
+.fade-in-fade-out {
+    display: flex;
+    width: 350px;
+    height: 500px;
+    border-radius: 10%;
+    padding: 20px;
+    padding-bottom: 80px;
+    -webkit-animation: fade-inout 7s;
+    -moz-animation: fade-inout 7s;
+    -o-animation: fade-inout 7s;
+    animation: fade-inout 7s;
+
+}
+
+img {
+    border: 3px solid black;
+    box-shadow: 10px 10px #523102;
+    border-radius: 5%;
+}
+
+@keyframes fade-inout {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* support for opera */
+@-o-keyframes fade-inout {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* support for mozila */
+@-moz-keyframes fade-inout {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* support for safari and chrome */
+@-webkit-keyframes fade-inout {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.card-bg {
+
+    width: 320px;
+    height: auto;
+    animation-name: slideInLeft;
+    animation-duration: 1s;
+    margin: 0;
+
+
+}
+
+
+.card-container {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, 330px);
+    align-items: center;
+}
+
+.card-bg {
+    /* Här har jag optimerat koden till alla cards! */
+
+    position: relative;
+    top: 0;
+    background-color: rgb(23, 22, 22);
+    padding: 10px;
+    opacity: 95%;
+    box-shadow: 15px 15px #523102;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+
+.card-content {
+    align-items: center;
+    text-align: center;
+    align-content: center;
+    padding: 1px;
+
+
+}
+
+
+.glow {
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+.flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    flex-shrink: 10;
+
+}
+
+
+.b-line:hover {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 35%;
+    background: linear-gradient(90deg, var(--pink) 0%, transparent 100%);
+    bottom: 0;
+    left: 0;
+    transition-duration: 300ms;
+}
+
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #fff, 0 0 1px #fff, 0 0 5px #934305, 0 0 5px #b97113, 0 0 3px #bc2811, 0 0 2px #c05a0c, 0 0 2px #ee1212;
+    }
+
+    to {
+        text-shadow: 0 0 2px #a65252, 0 0 2px #ad5918, 0 0 2px #cb4210, 0 0 2px #db4711, 0 0 2px #363335, 0 0 2px #dbb708, 0 0 2px #131112;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-300px)
+    }
+
+    to {
+        transform: translateX(0)
+    }
 }

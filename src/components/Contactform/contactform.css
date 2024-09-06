@@ -1,0 +1,66 @@
+input {
+    background: linear-gradient(#111111, #292929);
+    color: orange;
+    outline: none;
+    appearance: none;
+    border: none;
+    box-shadow: 2px 2px 2px 2px orange;
+    margin: 10px;
+
+    font-size: 1rem;
+    font-weight: 300;
+    height: 40px;
+    width: 310px;
+    border: 1px solid #777;
+    border-radius: 3px;
+}
+
+input::focus {
+    background: linear-gradient(#111111, #292929);
+}
+
+textarea {
+    background: linear-gradient(#111111, #292929);
+    outline: none;
+    appearance: none;
+    border: none;
+    color: orange;
+    box-shadow: 2px 2px 2px 2px orange;
+    font-size: 1rem;
+    box-sizing: border-box;
+    resize: none;
+    height: 200px;
+    width: 310px;
+    margin: 15px;
+
+}
+
+.popup {
+
+    color: green;
+
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+.--column {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 20px;
+    width: 350px;
+    height: 425px;
+    align-content: center;
+    align-items: center;
+
+}
+
+.h1,
+.h2 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}

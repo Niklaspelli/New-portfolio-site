@@ -18,9 +18,7 @@ function LandingPage() {
 
   return (
     <main>
-      <section className="landing">
-        <Home />
-      </section>
+      <section className="landing"></section>
       <div className="intro">
         <div className="intro-text">
           <h1 className="hide">
