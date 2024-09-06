@@ -7,6 +7,10 @@ import { styled } from "styled-components";
 import "./contactform.css";
 import emailjs from "@emailjs/browser";
 
+const service = import.meta.env.VITE_SERVICE;
+const template = import.meta.env.VITE_TEMPLATE;
+const id = import.meta.env.VITE_ID;
+
 const ContactForm = () => {
   const [values, setValues] = useState({
     fullName: "",
@@ -18,23 +22,21 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    emailjs
-      .send("service_iwtg0ga", "template_v8sjwh1", values, "RGZGJ9e24vn_ShfG3")
-      .then(
-        (response) => {
-          console.log("SUCCESS!", response);
-          setValues({
-            fullName: "",
-            email: "",
-            role: "",
-            message: "",
-          });
-          setStatus("SUCCESS");
-        },
-        (error) => {
-          console.log("FAILED...", error);
-        }
-      );
+    emailjs.send(service, template, values, id).then(
+      (response) => {
+        console.log("SUCCESS!", response);
+        setValues({
+          fullName: "",
+          email: "",
+          role: "",
+          message: "",
+        });
+        setStatus("SUCCESS");
+      },
+      (error) => {
+        console.log("FAILED...", error);
+      }
+    );
   };
 
   useEffect(() => {
