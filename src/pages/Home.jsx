@@ -15,16 +15,7 @@ import { styled } from "styled-components";
 export default function Home() {
   return (
     <Container>
-      <Row className="justify-content-center align-items-center h-100">
-        <Col>
-          <div className="fade-logo" style={{ color: "orange" }}>
-            Creative{" "}
-          </div>
-          <div className="typer">
-            <div className="glow">Frontend Developer...</div>
-          </div>
-        </Col>
-      </Row>
+      <Row className="justify-content-center align-items-center h-100"></Row>
 
       <Card
         animate={{ opacity: 1 }}
