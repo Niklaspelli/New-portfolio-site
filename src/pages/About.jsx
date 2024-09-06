@@ -2,6 +2,8 @@ import bild from "/Niklas.jpg";
 import "../styles.css";
 import { Container } from "react-bootstrap";
 
+const PDF_FILE_URL = "./Niklas_Pelli_CV.pdf";
+
 function About() {
   const downloadFileAtURL = (url) => {
     fetch(url)
