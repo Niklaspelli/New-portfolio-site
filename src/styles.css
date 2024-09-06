@@ -1,10 +1,8 @@
-/* Base styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 
 body {
     margin: 0;
@@ -16,6 +14,15 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+.workLink {
+    color: white;
+}
+
+.src-code {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+}
 
 .nav {
     background-color: #0a0a0a;
@@ -81,35 +88,95 @@ li {
     opacity: 1;
 }
 
-
-
-.card-container {
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fit, 330px);
-    align-items: center;
-}
-
-.card-bg {
-    /* Här har jag optimerat koden till alla cards! */
-
-    position: relative;
-    top: 0;
-    background-color: rgb(23, 22, 22);
-    padding: 10px;
-    opacity: 95%;
-    box-shadow: 15px 15px #523102;
-    margin-top: 20px;
-    margin-bottom: 20px;
-
-}
-
-.card-content {
-    align-items: center;
+.--text-center {
     text-align: center;
-    align-content: center;
-    padding: 1px;
+}
 
+.--card {
+    border: 1px solid transparent;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+}
+
+.--btn {
+
+    font-size: 1.6rem;
+    font-weight: 400;
+    padding: 6px 8px;
+    margin: 20px;
+    border: 1px solid orange;
+    border-radius: 10px;
+    background: black;
+    color: orange;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s;
+}
+
+.--btn:hover {
+    transform: translateY(-2px);
+}
+
+.--btn-lg {
+    padding: 6px 10px;
+}
+
+.--btn-block {
+    width: 100%;
+}
+
+.--about-btn {
+    position: relative;
+    left: 15%;
+}
+
+.--form-control {
+
+    font-weight: 300;
+}
+
+input {
+    background: linear-gradient(#111111, #292929);
+    color: orange;
+    outline: none;
+    appearance: none;
+    border: none;
+    box-shadow: 2px 2px 2px 2px orange;
+    margin: 10px;
+
+    font-size: 1rem;
+    font-weight: 300;
+    height: 40px;
+    width: 310px;
+    border: 1px solid #777;
+    border-radius: 3px;
+}
+
+input::focus {
+    background: linear-gradient(#111111, #292929);
+}
+
+textarea {
+    background: linear-gradient(#111111, #292929);
+    outline: none;
+    appearance: none;
+    border: none;
+    color: orange;
+    box-shadow: 2px 2px 2px 2px orange;
+    font-size: 1rem;
+    box-sizing: border-box;
+    resize: none;
+    height: 200px;
+    width: 310px;
+    margin: 15px;
+
+}
+
+.popup {
+
+    color: green;
 
 }
 
@@ -117,6 +184,23 @@ li {
     max-width: 1000px;
     margin: 0 auto;
     text-align: center;
+
+}
+
+.--column {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 20px;
+    width: 350px;
+    height: 425px;
+    align-content: center;
+    align-items: center;
+
+}
+
+.h1,
+.h2 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 }
 
@@ -151,7 +235,23 @@ footer {
     text-align: center;
 }
 
+h1 {
+    font-size: 60px;
+}
 
+.typer {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 18ch;
+    animation: typing 7s steps(18), blink 1s ease-in-out infinite;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 4px solid orange;
+    display: flex;
+
+}
 
 .fade-logo {
     font-size: 5rem;
@@ -342,6 +442,15 @@ footer {
     height: 450px;
 }
 
+@keyframes typing {
+    from {
+        width: 0ch;
+    }
+
+    to {
+        width: 18ch;
+    }
+}
 
 @keyframes blink {
     from {
@@ -502,4 +611,96 @@ img {
     to {
         transform: translateX(0)
     }
+}
+
+@media screen and (min-width: 360px) {
+
+    .flexbox {
+        place-content: center;
+
+    }
+
+
+
+    .typer {
+        flex-direction: column;
+        font-size: 2rem;
+
+
+    }
+
+    .fade-logo {
+        font-size: 3rem;
+    }
+
+    .glow {
+        font-size: 2rem;
+    }
+
+    .--btn {
+        margin-bottom: 80px;
+    }
+
+    footer {
+        margin: 0;
+    }
+
+    .card-container {
+        place-content: center;
+
+    }
+
+    .circle-container {
+        place-content: center;
+
+    }
+
+    .skills {
+        font-size: 4rem;
+    }
+
+    .progress-value {
+        margin-bottom: 60px;
+    }
+
+
+}
+
+@media screen and (min-width: 375px) {
+
+    .skills {
+        margin-top: 20px;
+        font-size: 3rem;
+
+    }
+
+    .progress-value {
+        margin-bottom: 60px;
+    }
+
+}
+
+
+
+
+@media screen and (min-width: 800px) {
+
+    .typer,
+    .fade-logo {
+
+        font-size: 5rem;
+    }
+
+    .glow {
+
+        font-size: 5rem;
+    }
+
+    .skills {
+        margin: 10px;
+
+
+    }
+
+
 }

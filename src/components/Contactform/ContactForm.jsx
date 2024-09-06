@@ -51,6 +51,7 @@ const ContactForm = () => {
       [e.target.name]: e.target.value,
     }));
   };
+
   return (
     <Container>
       <Grid
@@ -59,41 +60,31 @@ const ContactForm = () => {
         exit={{ opacity: 0 }}
         transition={{ duration: 1 }}
       >
-        {status && renderAlert()}
         <Row className="justify-content-center align-items-center h-100">
-          {" "}
           <h2 style={{ color: "orange" }}>Send me a message!</h2>
           <Col md={6} lg={4} className="justify-content-center">
             <label style={{ color: "orange" }}>Name:</label>
             <Form.Floating className="mb-1" inline>
-              {" "}
               <InputField
-                value={values.user_name}
+                value={values.fullName}
                 handleChange={handleChange}
-                name="user_name"
+                name="fullName"
                 type="text"
                 placeholder="John Doe"
               />
             </Form.Floating>
             <label style={{ color: "orange" }}>E-mail:</label>
             <Form.Floating className="mb-1" inline>
-              {" "}
               <InputField
-                value={values.user_email}
+                value={values.email}
                 handleChange={handleChange}
-                name="user_email"
+                name="email"
                 type="email"
-                placeholder="jphn@example.com"
+                placeholder="john@example.com"
               />
             </Form.Floating>
             <label style={{ color: "orange" }}>Message:</label>
-            <Form.Floating
-              className="mb-1"
-              inline
-              style={{
-                color: "orange",
-              }}
-            >
+            <Form.Floating className="mb-1" inline>
               <TextareaField
                 value={values.message}
                 handleChange={handleChange}
@@ -114,6 +105,7 @@ const ContactForm = () => {
             >
               Send
             </Button>
+            {status && renderAlert()}
           </Col>
         </Row>
       </Grid>
@@ -123,7 +115,7 @@ const ContactForm = () => {
 
 const renderAlert = () => (
   <div className="popup">
-    <p>Your mail sent!</p>
+    <p>Your mail was sent!</p>
   </div>
 );
 
@@ -132,5 +124,5 @@ export default ContactForm;
 const Grid = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  grid-grap: 3rem;
+  grid-gap: 3rem;
 `;

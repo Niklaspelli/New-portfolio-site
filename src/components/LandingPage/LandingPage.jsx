@@ -1,9 +1,6 @@
 import React, { useEffect } from "react";
 import gsap from "gsap";
 import "./LandingPage.css";
-import "../../styles.css";
-// Import your CSS file
-import Home from "../../pages/Home";
 
 function LandingPage() {
   useEffect(() => {
@@ -17,7 +14,7 @@ function LandingPage() {
   }, []);
 
   return (
-    <main>
+    <>
       <section className="landing"></section>
       <div className="intro">
         <div className="intro-text">
@@ -33,7 +30,7 @@ function LandingPage() {
         </div>
       </div>
       <div className="slider"></div>
-    </main>
+    </>
   );
 }
 

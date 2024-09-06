@@ -1,7 +1,5 @@
 .landing {
     position: relative;
-    width: 100vw;
-    height: 100vh;
     background: black no-repeat center center;
     background-size: cover;
     display: flex;
@@ -51,7 +49,7 @@
 }
 
 .intro-text h1 {
-    margin: 0;
+    margin: 2;
     /* Remove default margin */
     padding: 0;
     /* Remove default padding */

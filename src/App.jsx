@@ -3,7 +3,7 @@ import Navbar from "./components/Navbar";
 import About from "./pages/About";
 import Home from "./pages/Home";
 import Work from "./pages/Work";
-import Contact from "./pages/Contact";
+import ContactForm from "./components/Contactform/ContactForm";
 
 import "./styles.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -27,7 +27,7 @@ function App() {
           />
           <Route path="/About" element={<About />} />
           <Route path="/Work" element={<Work />} />
-          <Route path="/Contact" element={<Contact />} />
+          <Route path="/Contact" element={<ContactForm />} />
         </Routes>
       </div>
       <Footer />
