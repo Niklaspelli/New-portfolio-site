@@ -462,12 +462,12 @@ img {
 
 /* Front card styles */
 .flip-card-front {
-    background-color: #4e4e4e;
+    background: linear-gradient(#692b02, #080808);
 }
 
 /* Back card styles */
 .flip-card-back {
-    background-color: #4e4e4e;
+    background: linear-gradient(#080808, #692b02);
     transform: rotateY(180deg);
     /* Position it to be flipped */
 }

@@ -8,6 +8,8 @@ import {
   faJs,
   faNodeJs,
   faHtml5,
+  faGit,
+  faBootstrap,
 } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -79,7 +81,7 @@ function About() {
                   style={{
                     color: "blue",
                     fontSize: "5rem",
-                    margin: "20px",
+                    margin: "10px",
                   }}
                 />
                 <FontAwesomeIcon
@@ -87,7 +89,7 @@ function About() {
                   style={{
                     color: "yellow",
                     fontSize: "5rem",
-                    margin: "20",
+                    margin: "10",
                   }}
                 />
                 <FontAwesomeIcon
@@ -95,7 +97,7 @@ function About() {
                   style={{
                     color: "green",
                     fontSize: "5rem",
-                    margin: "20",
+                    margin: "10",
                   }}
                 />
                 <FontAwesomeIcon
@@ -103,7 +105,31 @@ function About() {
                   style={{
                     color: "orange",
                     fontSize: "5rem",
-                    margin: "20",
+                    margin: "10",
+                  }}
+                />
+                <FontAwesomeIcon
+                  icon={faGit}
+                  style={{
+                    color: "red",
+                    fontSize: "5rem",
+                    margin: "10",
+                  }}
+                />
+                <FontAwesomeIcon
+                  icon={faReact}
+                  style={{
+                    color: "cyan",
+                    fontSize: "5rem",
+                    margin: "10",
+                  }}
+                />
+                <FontAwesomeIcon
+                  icon={faBootstrap}
+                  style={{
+                    color: "purple",
+                    fontSize: "5rem",
+                    margin: "10",
                   }}
                 />
               </div>
