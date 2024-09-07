@@ -1,10 +1,21 @@
+import React, { useState } from "react";
 import bild from "/Niklas.jpg";
 import "../styles.css";
 import { Container } from "react-bootstrap";
+import {
+  faReact,
+  faCss3Alt,
+  faJs,
+  faNodeJs,
+  faHtml5,
+} from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const PDF_FILE_URL = "./Niklas_Pelli_CV.pdf";
 
 function About() {
+  const [isFlipped, setIsFlipped] = useState(false);
+
   const downloadFileAtURL = (url) => {
     fetch(url)
       .then((response) => response.blob())
@@ -20,6 +31,12 @@ function About() {
         aTag.remove();
       });
   };
+
+  // Toggle flip state when the card is clicked
+  const handleClick = () => {
+    setIsFlipped(!isFlipped);
+  };
+
   return (
     <Container>
       <main className="About">
@@ -49,6 +66,48 @@ function About() {
           </div>
           <div className="card-img">
             <img src={bild} className="img" alt="" />
+          </div>
+
+          <div className="flip-card-container" onClick={handleClick}>
+            <div className={`flip-card-inner ${isFlipped ? "flipped" : ""}`}>
+              <div className="flip-card-front">
+                <div className="flip-headline">Click to see my skills</div>
+              </div>
+              <div className="flip-card-back">
+                <FontAwesomeIcon
+                  icon={faCss3Alt}
+                  style={{
+                    color: "blue",
+                    fontSize: "5rem",
+                    margin: "20px",
+                  }}
+                />
+                <FontAwesomeIcon
+                  icon={faJs}
+                  style={{
+                    color: "yellow",
+                    fontSize: "5rem",
+                    margin: "20",
+                  }}
+                />
+                <FontAwesomeIcon
+                  icon={faNodeJs}
+                  style={{
+                    color: "green",
+                    fontSize: "5rem",
+                    margin: "20",
+                  }}
+                />
+                <FontAwesomeIcon
+                  icon={faHtml5}
+                  style={{
+                    color: "orange",
+                    fontSize: "5rem",
+                    margin: "20",
+                  }}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </main>
