@@ -1,5 +1,6 @@
 import { Container } from "react-bootstrap";
 import YouTubeVideo from "../components/YoutubeVideo";
+import LikeButton from "../LikeButton";
 import "../styles.css";
 
 export default function Work() {
@@ -22,6 +23,7 @@ export default function Work() {
               Amazing shirts!
             </a>
           </p>
+          <LikeButton />
         </div>
       </main>
     </Container>
