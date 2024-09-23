@@ -99,12 +99,13 @@ li {
     overflow: hidden;
 }
 
-.--btn {
+.btn {
 
     font-size: 1.6rem;
     font-weight: 400;
     padding: 6px 8px;
     margin: 20px;
+    margin-top: 20px;
     border: 1px solid orange;
     border-radius: 10px;
     background: black;
@@ -115,69 +116,8 @@ li {
     transition: all 0.3s;
 }
 
-.--btn:hover {
+.btn:hover {
     transform: translateY(-2px);
-}
-
-.--btn-lg {
-    padding: 6px 10px;
-}
-
-.--btn-block {
-    width: 100%;
-}
-
-.--about-btn {
-    position: relative;
-    left: 15%;
-}
-
-.--form-control {
-
-    font-weight: 300;
-}
-
-input {
-    background: linear-gradient(#111111, #292929);
-    color: orange;
-    outline: none;
-    appearance: none;
-    border: none;
-    box-shadow: 2px 2px 2px 2px orange;
-    margin: 10px;
-
-    font-size: 1rem;
-    font-weight: 300;
-    height: 40px;
-    width: 310px;
-    border: 1px solid #777;
-    border-radius: 3px;
-}
-
-input::focus {
-    background: linear-gradient(#111111, #292929);
-}
-
-textarea {
-    background: linear-gradient(#111111, #292929);
-    outline: none;
-    appearance: none;
-    border: none;
-    color: orange;
-    box-shadow: 2px 2px 2px 2px orange;
-    font-size: 1rem;
-    box-sizing: border-box;
-    resize: none;
-    height: 200px;
-    width: 310px;
-    margin: 15px;
-
-}
-
-.popup {
-
-    color: green;
-
 }
 
 .container {
@@ -195,13 +135,20 @@ textarea {
     height: 425px;
     align-content: center;
     align-items: center;
-
 }
 
-.h1,
-.h2 {
+h1,
+h2 {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 20px;
+}
 
+h1 {
+    font-size: 60px;
+}
+
+h2 {
+    font-size: 40px;
 }
 
 footer {
@@ -235,23 +182,16 @@ footer {
     text-align: center;
 }
 
-h1 {
-    font-size: 60px;
-}
 
 
 .fade-logo {
     font-size: 5rem;
     display: flex;
-
     -webkit-animation: fade-inout 7s;
     -moz-animation: fade-inout 7s;
     -o-animation: fade-inout 7s;
     animation: fade-inout 7s;
 }
-
-
-
 
 .video-container {
     position: relative;
@@ -288,23 +228,39 @@ h1 {
 .card-img,
 .fade-in-fade-out {
     display: flex;
-    width: 350px;
-    height: 500px;
+    width: 100%;
+    max-width: 90vw;
+    /* Use viewport width for larger screens */
+    height: auto;
+    /* Height will adjust to maintain aspect ratio */
+    aspect-ratio: 2 / 3;
+    /* Keeps the container's aspect ratio consistent */
     border-radius: 10%;
-    padding: 20px;
-    padding-bottom: 80px;
+    padding-bottom: 20px;
     -webkit-animation: fade-inout 7s;
     -moz-animation: fade-inout 7s;
     -o-animation: fade-inout 7s;
     animation: fade-inout 7s;
-
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 img {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
     border: 3px solid black;
     box-shadow: 10px 10px #523102;
     border-radius: 5%;
 }
+
+
+
+
+
+
 
 @keyframes fade-inout {
     0% {
@@ -363,8 +319,8 @@ img {
 
 .card-container {
     display: grid;
-    gap: 1rem;
-    grid-template-columns: repeat(auto-fit, 330px);
+    gap: 3rem;
+    grid-template-columns: repeat(auto-fit, 320px);
     align-items: center;
 }
 
@@ -392,7 +348,8 @@ img {
 }
 
 
-.glow {
+.glow,
+.site-title {
     animation: glow 1s ease-in-out infinite alternate;
 }
 
@@ -423,10 +380,7 @@ img {
     height: 300px;
     cursor: pointer;
     flex-direction: column;
-
     margin-bottom: 80px;
-
-
 }
 
 /* Inner wrapper that contains both sides */
@@ -482,7 +436,7 @@ img {
 
 @keyframes glow {
     from {
-        text-shadow: 0 0 5px #fff, 0 0 1px #fff, 0 0 5px #934305, 0 0 5px #b97113, 0 0 3px #bc2811, 0 0 2px #c05a0c, 0 0 2px #ee1212;
+        text-shadow: 0 0 5px #f1860b, 0 0 1px #fff, 0 0 5px #934305, ;
     }
 
     to {
@@ -504,16 +458,11 @@ img {
 
     .flexbox {
         place-content: center;
-
     }
-
-
 
     .typer {
         flex-direction: column;
         font-size: 2rem;
-
-
     }
 
     .fade-logo {
@@ -524,8 +473,8 @@ img {
         font-size: 2rem;
     }
 
-    .--btn {
-        margin-bottom: 80px;
+    .btn {
+        margin-bottom: 30px;
     }
 
     footer {
@@ -537,11 +486,6 @@ img {
 
     }
 
-    .circle-container {
-        place-content: center;
-
-    }
-
     .flip-card-container {
         place-content: center;
     }
@@ -549,30 +493,9 @@ img {
     .skills {
         font-size: 4rem;
     }
-
-    .progress-value {
-        margin-bottom: 60px;
-    }
-
-
 }
 
-@media screen and (min-width: 375px) {
-
-    .skills {
-        margin-top: 20px;
-        font-size: 3rem;
-
-    }
-
-    .progress-value {
-        margin-bottom: 60px;
-    }
-
-}
-
-
-
+@media screen and (min-width: 375px) {}
 
 @media screen and (min-width: 800px) {
 
@@ -583,15 +506,6 @@ img {
     }
 
     .glow {
-
         font-size: 5rem;
     }
-
-    .skills {
-        margin: 10px;
-
-
-    }
-
-
 }

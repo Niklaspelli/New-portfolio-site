@@ -166,10 +166,6 @@ const Card = styled(motion.div)`
     top: 20rem;
     text-align: center;
   }
-  h2 {
-    color: orange;
-    margin: 1rem;
-  }
 
   .progress-value {
     margin-top: -20px;

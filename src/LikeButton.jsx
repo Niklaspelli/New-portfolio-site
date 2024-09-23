@@ -42,11 +42,12 @@ const LikeButton = () => {
           border: "none",
           cursor: "pointer",
           margin: "20px",
+          color: "orange",
         }}
       >
         <FaThumbsUp size={42} className={isShaking ? "shake" : ""} />
       </button>
-      <p>
+      <p style={{ marginBottom: "10px" }}>
         {likes} {likes === 1 ? "like" : "likes"}
       </p>
     </div>

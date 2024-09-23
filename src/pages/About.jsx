@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import bild from "/Niklas.jpg";
 import "../styles.css";
 import { Container } from "react-bootstrap";
@@ -17,6 +17,19 @@ const PDF_FILE_URL = "./Niklas_Pelli_CV.pdf";
 
 function About() {
   const [isFlipped, setIsFlipped] = useState(false);
+  const [message, setMessage] = useState("Good Evening!");
+
+  useEffect(() => {
+    const currentHour = new Date().getHours();
+
+    if (currentHour < 12) {
+      setMessage("Good morning and welcome!");
+    } else if (currentHour < 18) {
+      setMessage("Good day and welcome!");
+    } else {
+      setMessage("Good evening and welcome!");
+    }
+  }, []); // Empty dependency array to run once when the component mounts. */
 
   const downloadFileAtURL = (url) => {
     fetch(url)
@@ -41,6 +54,9 @@ function About() {
 
   return (
     <Container>
+      <div className="typer">
+        <h1>{message}</h1>
+      </div>
       <main className="About">
         <div className="card-container">
           <div className="card-bg">
@@ -61,13 +77,13 @@ function About() {
               onClick={() => {
                 downloadFileAtURL(PDF_FILE_URL);
               }}
-              className="--btn --btn-contact"
+              className="btn"
             >
               Download CV
             </button>
           </div>
           <div className="card-img">
-            <img src={bild} className="img" alt="" />
+            <img src={bild} className="img-fluid" alt="" />
           </div>
 
           <div className="flip-card-container" onClick={handleClick}>

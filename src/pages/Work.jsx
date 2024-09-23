@@ -8,10 +8,14 @@ export default function Work() {
     <Container>
       <main className="Work" style={{ color: "orange" }}>
         <h2>My work</h2>
-        <p style={{ marginTop: "1rem" }}>
-          Here is a sample of a webshop I'm currently working on! Here I'm using
-          React and Node.js as backend.
-        </p>
+        <div className="container">
+          <p style={{ margin: "1rem", marginBottom: "1rem" }}>
+            Here is a sample of a webshop I'm currently working on!
+          </p>
+          <p>
+            Here I'm using <b>React Vite </b>and <b>Node.js</b> as backend.
+          </p>
+        </div>
         <YouTubeVideo />
         <div className="src-code">
           <p>

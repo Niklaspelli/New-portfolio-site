@@ -22,6 +22,13 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Simple validation before submission
+    if (!values.fullName || !values.email || !values.message) {
+      setStatus("ERROR");
+      return;
+    }
+
     emailjs.send(service, template, values, id).then(
       (response) => {
         console.log("SUCCESS!", response);
@@ -35,14 +42,15 @@ const ContactForm = () => {
       },
       (error) => {
         console.log("FAILED...", error);
+        setStatus("ERROR");
       }
     );
   };
 
   useEffect(() => {
-    if (status === "SUCCESS") {
+    if (status === "SUCCESS" || status === "ERROR") {
       setTimeout(() => {
-        setStatus("");
+        setStatus(""); // Reset status after 3 seconds
       }, 3000);
     }
   }, [status]);
@@ -52,6 +60,23 @@ const ContactForm = () => {
       ...values,
       [e.target.name]: e.target.value,
     }));
+  };
+
+  const renderAlert = () => {
+    if (status === "SUCCESS") {
+      return (
+        <div className="popup" style={{ color: "white", marginTop: "10px" }}>
+          <p>Your mail was sent successfully!</p>
+        </div>
+      );
+    } else if (status === "ERROR") {
+      return (
+        <div className="popup" style={{ color: "red", marginTop: "10px" }}>
+          <p>Failed to send your mail. Please try again.</p>
+        </div>
+      );
+    }
+    return null;
   };
 
   return (
@@ -73,6 +98,7 @@ const ContactForm = () => {
                 name="fullName"
                 type="text"
                 placeholder="John Doe"
+                required // Make full name required
               />
             </Form.Floating>
             <label style={{ color: "orange" }}>E-mail:</label>
@@ -83,6 +109,7 @@ const ContactForm = () => {
                 name="email"
                 type="email"
                 placeholder="john@example.com"
+                required // Make email required
               />
             </Form.Floating>
             <label style={{ color: "orange" }}>Message:</label>
@@ -91,8 +118,10 @@ const ContactForm = () => {
                 value={values.message}
                 handleChange={handleChange}
                 name="message"
+                required // Make message required
               />
             </Form.Floating>
+            {renderAlert()}
             <Button
               className="--btn"
               type="submit"
@@ -101,25 +130,19 @@ const ContactForm = () => {
                 border: "1px solid orange",
                 color: "orange",
                 padding: "6px 8px",
-                margin: "20px",
+                margin: "30px",
+                marginBottom: "80px",
               }}
               onClick={(e) => handleSubmit(e)}
             >
               Send
             </Button>
-            {status && renderAlert()}
           </Col>
         </Row>
       </Grid>
     </Container>
   );
 };
-
-const renderAlert = () => (
-  <div className="popup">
-    <p>Your mail was sent!</p>
-  </div>
-);
 
 export default ContactForm;
 
